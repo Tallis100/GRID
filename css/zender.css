@@ -1,0 +1,113 @@
+/* BASIC NORMALIZE */
+html, body{
+    margin: 0; padding: 0;
+    height: 100%;
+}
+
+/* NAV CLASS */
+nav {
+    width: 100%;
+    box-shadow: 0.5px 0.5px 2px black;
+    position: relative;
+}
+nav ul {
+    list-style: none;
+    margin: 0; padding: 0;
+}
+nav ul li {
+    display: inline-block;
+}
+nav ul li:hover {
+    background-color: #d06c70;
+}
+nav ul li a{
+    display: block;
+    padding: 25.8px;
+    font-weight: 510;
+    text-decoration: none;
+    color: white;
+    font-family: sans-serif;
+    width: 100%;
+}
+
+/* NAV CLASS > POSITIONING*/
+.div-logo-left {
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    top: 3px;
+    left: 10px;
+}
+.div-logo-left .size-img {
+    width: 64px;
+    height: 64px;
+}
+.div-ul-left {
+    position: relative;
+    margin-left: 90px;    
+}
+
+/* CSS GRID */
+.container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(18, 1fr);
+    grid-template-rows: auto 1fr 100px; 
+    grid-template-areas: 
+        
+        "n n n n n n n n n n n n n n n n n n"
+        "a a a m m m m m m m m m m m m m m m"
+        "f f f f f f f f f f f f f f f f f f"
+} 
+.zender-aside {
+    grid-area: a;
+}
+.zender-nav {
+    grid-area: n;
+}
+.zender-main {
+    grid-area: m;
+}
+.zender-footer {
+    grid-area: f;
+}
+
+/* CSS GRID DESIGN */
+.zender-aside {
+    background-color: #692dac;
+}
+.zender-nav {
+    background-color: #ee6e73;
+}
+.zender-main {
+    background-color: #9d538e;
+}
+.zender-footer {
+    background-color: #34acaf;
+}
+
+/* MEDIA QUERIES (KEEP THIS CODE IN THE BOTTOM OF PAGE)*/
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 100px auto 1fr 100px;
+        grid-template-areas: 
+            "a a a a a a a a a a a a"
+            "n n n n n n n n n n n n"            
+            "m m m m m m m m m m m m"
+            "f f f f f f f f f f f f"
+    }
+    .zender-aside {
+        grid-column: 1 / -1;
+    }
+    .div-logo-left {
+        display: none;
+    }
+    .div-ul-left {
+        margin-left: 0px;
+    }
+    nav ul li {
+        display: flex;
+        text-align: center;
+    }
+}
